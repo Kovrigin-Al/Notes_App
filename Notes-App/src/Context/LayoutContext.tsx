@@ -1,13 +1,13 @@
 import { ReactNode, FC, useState, createContext, useContext } from "react";
-import { NotesStyle } from "../types/notesStyleTypes";
+import { NotesStyle } from "../types/notes";
 
 interface ILayoutContext {
   state: NotesStyle;
   setNotesListed: () => void;
   setNotesCarded: () => void;
 }
-export const LayoutContext = createContext<ILayoutContext | undefined>(
-  undefined
+export const LayoutContext = createContext<ILayoutContext>(
+  {} as ILayoutContext
 );
 
 type IProps = { children: ReactNode };

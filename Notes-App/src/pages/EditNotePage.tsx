@@ -1,5 +1,7 @@
+import EditForm from "../Components/EditForm";
+import ListedStyleContainer from "../Components/ListedStyleContainer";
 import { useLayoutContext } from "../Context/LayoutContext";
-import { NotesStyle } from "../types/notesStyleTypes";
+import { NotesStyle } from "../types/notes";
 
 type Props = {};
 const EditNotePage = (props: Props) => {
@@ -7,16 +9,15 @@ const EditNotePage = (props: Props) => {
 
   return (
     <>
-      {layoutStyle === NotesStyle.list && <></>}
-    <div>
-      <h1>EditNotePage</h1>
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto possimus
-        eius sint quia est officiis veniam consequatur ratione reiciendis
-        asperiores. Consectetur sit incidunt fuga dolorum vitae illum assumenda
-        deleniti optio?
-      </p>
-    </div>
+      {layoutStyle === NotesStyle.list && (
+      <>
+      <div className="hidden sm:block"><ListedStyleContainer /></div>
+      <div className='w-[100vw] h-[100vh]'><EditForm/></div> 
+      </>
+       )}
+    {layoutStyle === NotesStyle.card && <div>
+      <EditForm/>
+    </div>}
     </>
   );
 };

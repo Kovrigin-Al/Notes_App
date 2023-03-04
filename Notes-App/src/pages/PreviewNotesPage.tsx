@@ -1,12 +1,15 @@
+import { FC } from "react";
 import CardedStyleContainer from "../Components/CardedStyleContainer";
 import ListedStyleContainer from "../Components/ListedStyleContainer";
 import NoteCard from "../Components/NoteCard";
 import NotesList from "../Components/NotesList";
 import { useLayoutContext } from "../Context/LayoutContext";
-import { NotesStyle } from "../types/notesStyleTypes";
+import { useNotesContext } from "../Context/NotesContext";
+import { INote, NotesStyle } from "../types/notes";
 
-type Props = {};
-const PreviewNotesPage = (props: Props) => {
+type Props = {
+};
+const PreviewNotesPage: FC<Props> = ({}) => {
   const layoutStyle = useLayoutContext()?.state;
 
   return (
