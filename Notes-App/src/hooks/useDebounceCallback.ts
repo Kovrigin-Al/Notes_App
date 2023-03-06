@@ -1,7 +1,7 @@
 import { useCallback, useRef } from "react";
 
 export default function useDebounceCallback(callback: (...args: any) => void, delay: number) {
-    const timer = useRef<NodeJS.Timeout>();
+    const timer = useRef<ReturnType<typeof setTimeout>>();
     const debouncedCallback = useCallback((...args: any) => { 
         if (timer.current) {
             clearTimeout(timer.current)

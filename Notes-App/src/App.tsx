@@ -5,7 +5,6 @@ import PreviewNotesPage from "./pages/PreviewNotesPage";
 
 export const enum ROUTE_PATH {
   MAIN = "",
-  NEW = "new",
 }
 
 export const enum ROUTE_PARAMS {
@@ -18,7 +17,6 @@ function App() {
       <Routes>
         <Route element={<TopBar />}>
           <Route path={`/${ROUTE_PATH.MAIN}`} element={<PreviewNotesPage />} />
-          <Route path={`/${ROUTE_PATH.NEW}`} element={<EditNotePage />} />
           <Route path={`/:${ROUTE_PARAMS.ID}`} element={<EditNotePage />} />
           <Route path="*" element={<Navigate to={`/${ROUTE_PATH.MAIN}`} />} />
         </Route>
