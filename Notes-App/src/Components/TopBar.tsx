@@ -20,6 +20,7 @@ import { useNotesContext } from "../Context/NotesContext";
 import ConfirmationModal from "./ui/ConfirmationModal";
 import { useEditFormContext } from "../Context/EditFormContext";
 import { combineClasses } from "../utils/combineClasses";
+import SearchBar from "./ui/SearchBar";
 
 type Props = {};
 const TopBar = (props: Props) => {
@@ -44,9 +45,9 @@ const TopBar = (props: Props) => {
   const handleGoBack = () => {
     if (isNoteEmpty) {
       handleDeleteNote();
-    } else {
-      navigate("..");
     }
+    navigate("..");
+    
   };
 
   const handleChangeStyle = (arg: string) => {
@@ -110,10 +111,14 @@ const TopBar = (props: Props) => {
           </PressableButton>
         </div>
 
+        <SearchBar />
+
         {/* formating text buttons */}
         <div
           className={combineClasses(
-            isTextSelected ? "bg-slate-400" : "pointer-events-none text-slate-400 bg-slate-200",
+            isTextSelected
+              ? "bg-slate-400"
+              : "pointer-events-none text-slate-400 bg-slate-200",
             "mr-5 rounded-md  p-1 w-20 flex justify-around"
           )}
         >
