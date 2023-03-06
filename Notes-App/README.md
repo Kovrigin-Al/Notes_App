@@ -21,7 +21,7 @@ This app is a limited copy the of default notes app in mac OS.
 
 # Live version
 
-https://notes-app.vercel.app
+notes-app-one-kohl.vercel.app
 
 
 ## Run locally
