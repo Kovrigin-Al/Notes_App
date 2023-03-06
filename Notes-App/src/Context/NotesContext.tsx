@@ -9,7 +9,7 @@ interface INotesContext {
   onCreateNote: () => void;
   onDeleteNote: (id: string) => void;
   getNoteById: (id: string) => INote;
-  onChangeNote: (id: string, body: string) => void;
+  onChangeNote: (id: string, body: string, title: string) => void;
 }
 
 export const NotesContex = createContext<INotesContext>({} as INotesContext);
@@ -23,7 +23,7 @@ export const NotesProvider: FC<IProps> = ({ children }) => {
   const onCreateNote = () => {
     const id = uuidV4();
     setNotes((prevNotes) => {
-      return [...prevNotes, { body: "", date: Date.now(), id }];
+      return [...prevNotes, { body: "", title:"", date: Date.now(), id }];
     });
     navigate(`/${id}`);
   };
@@ -36,11 +36,11 @@ export const NotesProvider: FC<IProps> = ({ children }) => {
 
   const getNoteById = (id: string) => notes.filter(note => note.id === id)[0];
 
-  const onChangeNote = (id: string, body: string) => {
+  const onChangeNote = (id: string, body: string, title: string) => {
     setNotes(prevNotes => {
       return prevNotes.map(note => {
         if (note.id === id) {
-          return { ...note, body, date: Date.now() }
+          return { ...note, body, title, date: Date.now() }
         } else {
           return note
         }

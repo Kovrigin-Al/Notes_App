@@ -12,10 +12,9 @@ const EditNotePage = (props: Props) => {
       {layoutStyle === NotesStyle.list && (
       <>
       <div className="hidden sm:block"><ListedStyleContainer /></div>
-      <div className='w-[100vw] h-[100vh]'><EditForm/></div> 
       </>
        )}
-    {layoutStyle === NotesStyle.card && <div>
+    {layoutStyle === NotesStyle.card && <div className="h-screen">
       <EditForm/>
     </div>}
     </>

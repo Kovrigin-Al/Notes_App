@@ -14,16 +14,15 @@ const CardedStyleContainer: FC = (props: Props) => {
   const createNote = notesContex.onCreateNote
 
   return (
-    <div className="bg-green-500 h-full p-5 w-full overflow-y-scroll gridBox">
-      {notes.length === 0 && <div onClick={createNote}>
-      <NoteCard />
-      </div>}
+    <div className="bg-white h-full p-5 w-full overflow-y-scroll gridBox">
       {notes.map((note,index)=>
       <Link key={index} to={String(note.id)}>
-      <NoteCard />
+      <NoteCard note={note}></NoteCard>
       </Link>
       )}
-   
+      <div onClick={createNote} className='cursor-pointer'>
+      <NoteCard></NoteCard>
+      </div>
     </div>
   );
 };

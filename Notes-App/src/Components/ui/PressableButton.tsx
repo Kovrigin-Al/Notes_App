@@ -14,7 +14,7 @@ const PressableButton: FC<Props> = ({children, active, className: classNameProp,
         active
           ? "text-white bg-slate-600 border-transparent"
           : "hover:text-white hover:bg-slate-600 hover:border-transparent",
-        "text-sm text-slate-600 font-semibold rounded-md border border-slate-200 "
+        "text-sm text-slate-600 font-semibold rounded-md  "
       )}
       onClick={onClick}
     >

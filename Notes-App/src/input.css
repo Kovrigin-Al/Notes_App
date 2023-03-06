@@ -11,7 +11,7 @@ body {
 
 .gridBox {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, auto));
+    grid-template-columns: repeat(auto-fill, minmax(200px, auto));
     grid-auto-rows: min-content;
     justify-items: center;
     align-items: center;

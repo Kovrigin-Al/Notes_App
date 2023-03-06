@@ -7,5 +7,6 @@ export enum NotesStyle {
  export interface INote {
     id: string;
     date: number;
-    body: string
+    body: string;
+    title: string
   }
